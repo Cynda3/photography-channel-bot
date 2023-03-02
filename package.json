@@ -1,12 +1,12 @@
 {
-  "name": "pokebot",
+  "name": "photography-channel",
   "version": "1.0.0",
   "description": "",
   "main": "bot.js",
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "telegraf": "^3.24.0"
+    "telegraf": "^4.11.2"
   },
   "scripts": {
   	"start": "node bot.js"

@@ -1,5 +1,18 @@
 ﻿var fs = require('fs');
 const Telegraf = require('telegraf');
+const Twit = require('twit');
+
+
+// Set up the Telegram Bot API
+const bot = new Telegraf('6175439362:AAF7nRFLwBNWqyJIZYMaObCv9gbICPEfIgk');
+
+// Set up the Twitter API
+const twitterClient = new Twit({
+	consumer_key: 'YOUR_TWITTER_API_KEY',
+	consumer_secret: 'YOUR_TWITTER_API_SECRET_KEY',
+	access_token: 'YOUR_TWITTER_ACCESS_TOKEN',
+	access_token_secret: 'YOUR_TWITTER_ACCESS_TOKEN_SECRET',
+  });
 
 const IS_HEROKU = process.env.API_TOKEN? true: false;
 const API_TOKEN = process.env.API_TOKEN || '';
@@ -13,7 +26,6 @@ const STICKERS = {
 	'PUTIN': 'CAADAgADuwMAAjq5FQLpT_o8u1zbKhYE'
 };
 
-const bot = new Telegraf(API_TOKEN);
 
 
 bot.hears(/Como .+ a .+ con .+/i, buscar_counter);
